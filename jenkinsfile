@@ -17,11 +17,6 @@ pipeline {
             }
         }
 
-        stage('DEPLOY TOMCAT') {
-            steps {
-                echo 'Deploying artifact to tomcat  webserver '
-                deploy adapters: [tomcat9(credentialsId: 'apache', path: '', url: 'http://ec2-3-83-207-23.compute-1.amazonaws.com:8081/')], contextPath: 'MC-APP', war: '**/*.war'
-            }
-        }
+      
     }
 }
